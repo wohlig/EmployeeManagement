@@ -24,7 +24,9 @@
         <td>{{employee.lastname}}</td>
         <td>{{employee.salary}}</td>
         <td>
-          <button class="btn btn-warning">Edit</button>
+          <button class="btn btn-warning" ng-click="editEmployee(employee.id)">
+            Edit
+          </button>
           <button class="btn btn-danger" ng-click="deleteEmployee(employee.id)">
             Delete
           </button>

@@ -24,6 +24,11 @@ firstapp.config(function(
       url: "/add",
       templateUrl: "views/template.html",
       controller: "AddCtrl"
+    })
+    .state("edit", {
+      url: "/edit/:id",
+      templateUrl: "views/template.html",
+      controller: "EditCtrl"
     });
   $urlRouterProvider.otherwise("/");
   $locationProvider.html5Mode(isproduction);
