@@ -11,12 +11,48 @@ templateservicemod.service("TemplateService", function() {
   ];
 
   this.employeeData = [
-    { firstname: "Chintan", lastname: "Shah", id: "M0001", salary: 1000000 },
-    { firstname: "Chirag", lastname: "Shah", id: "M0002", salary: 1000000 },
-    { firstname: "Naman", lastname: "Gadhani", id: "M0003", salary: 1000000 },
-    { firstname: "Jagruti", lastname: "Shah", id: "C0001", salary: 1000000 },
-    { firstname: "Abhishek", lastname: "Shah", id: "C0002", salary: 1000000 },
-    { firstname: "Pratik", lastname: "Shah", id: "C0003", salary: 2000000 }
+    {
+      firstname: "Chintan",
+      lastname: "Shah",
+      id: "M0001",
+      salary: 1000000,
+      department: "Marketing"
+    },
+    {
+      firstname: "Chirag",
+      lastname: "Shah",
+      id: "M0002",
+      salary: 1000000,
+      department: "Marketing"
+    },
+    {
+      firstname: "Naman",
+      lastname: "Gadhani",
+      id: "M0003",
+      salary: 1000000,
+      department: "Marketing"
+    },
+    {
+      firstname: "Jagruti",
+      lastname: "Shah",
+      id: "C0001",
+      salary: 1000000,
+      department: "Chief Officers"
+    },
+    {
+      firstname: "Abhishek",
+      lastname: "Shah",
+      id: "C0002",
+      salary: 1000000,
+      department: "Chief Officers"
+    },
+    {
+      firstname: "Pratik",
+      lastname: "Shah",
+      id: "C0003",
+      salary: 2000000,
+      department: "Chief Officers"
+    }
   ];
 
   this.createId = function(form) {
