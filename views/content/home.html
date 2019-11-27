@@ -1,10 +1,19 @@
 <div class="container">
-  <input
-    type="text"
-    placeholder="Search..."
-    class="form-control"
-    ng-model="searchData.text"
-  />
+  <div class="row">
+    <div class="col-md-4">
+      <input
+        type="text"
+        placeholder="Search..."
+        class="form-control"
+        ng-model="searchData.text"
+      />
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      Total Salary of Company: {{totalSalary|currency : "₹"}}
+    </div>
+  </div>
+
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -24,7 +33,7 @@
         <td>{{employee.id}}</td>
         <td>{{employee.firstname}}</td>
         <td>{{employee.lastname}}</td>
-        <td>{{employee.salary}}</td>
+        <td>{{employee.salary|currency : "₹"}}</td>
         <td>
           <button class="btn btn-warning" ng-click="editEmployee(employee.id)">
             Edit

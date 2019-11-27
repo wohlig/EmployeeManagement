@@ -17,6 +17,9 @@ angular
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.searchData = {};
+    $scope.totalSalary = _.sumBy($scope.template.employeeData, function(n) {
+      return n.salary;
+    });
     $scope.deleteEmployee = function(employeeId) {
       _.remove($scope.template.employeeData, function(n) {
         return employeeId == n.id;
