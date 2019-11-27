@@ -39,6 +39,7 @@ angular
     $scope.navigation = NavigationService.getnav();
     $scope.formData = {};
     $scope.addEmployee = function() {
+      $scope.formData.id = $scope.formData.idIni + $scope.formData.id;
       $scope.template.employeeData.push($scope.formData);
       $state.go("home");
     };

@@ -3,18 +3,47 @@
 
   <form name="formName" ng-submit="addEmployee();" ng-if="!formSubmitted">
     <div class="form-group">
-      <div class="form-group">
-        <label>Employee Id</label>
-        <input
-          type="text"
-          name="id"
-          ng-change="template.employeeIdValidation(formData)"
-          class="form-control"
-          ng-model="formData.id"
-          placeholder="Enter Your Employee Id"
-          required
-        />
+      <label>Department</label>
+      <select
+        class="form-control"
+        ng-model="formData.department"
+        placeholder="Enter Department"
+        required
+        ng-change="template.createId(formData)"
+      >
+        <option
+          value="{{department}}"
+          ng-repeat="department in template.departments"
+          >{{department}}</option
+        ></select
+      >
+    </div>
+    <div class="form-group">
+      <label>Employee Id</label>
+      <div class="row">
+        <div class="col-md-3">
+          <input
+            type="text"
+            readonly
+            class="form-control"
+            ng-model="formData.idIni"
+            required
+          />
+        </div>
+        <div class="col-md-9">
+          <input
+            type="text"
+            name="id"
+            ng-change="template.employeeIdValidation(formData)"
+            class="form-control"
+            ng-model="formData.id"
+            placeholder="Enter Your Employee Id"
+            required
+          />
+        </div>
       </div>
+    </div>
+    <div class="form-group">
       <label>First Name*</label>
       <input
         type="text"

@@ -19,28 +19,25 @@ templateservicemod.service("TemplateService", function() {
     { firstname: "Pratik", lastname: "Shah", id: "C0003", salary: 2000000 }
   ];
 
+  this.createId = function(form) {
+    form.idIni = form.department.slice(0, 1);
+  };
   this.employeeIdValidation = function(form) {
     if (!_.isEmpty(form.id)) {
-      var char1 = form.id.slice(0, 1);
-      if (char1 != "C" && char1 != "D" && char1 != "M" && char1 != "S") {
-        form.id = "";
-      } else {
-        var trueString = char1 + "";
-        var numbers = form.id.slice(1, 5);
-        _.each(numbers, function(n) {
-          if (!_.isNaN(parseInt(n))) {
-            trueString += n;
-          }
-        });
-        form.id = trueString;
-      }
+      var trueString = "";
+      var numbers = form.id.slice(0, 4);
+      _.each(numbers, function(n) {
+        if (!_.isNaN(parseInt(n))) {
+          trueString += n;
+        }
+      });
+      form.id = trueString;
     }
-
-    if (form.id && form.id.length > 5) {
-      form.id = form.id.slice(0, 5);
+    if (form.id && form.id.length > 4) {
+      form.id = form.id.slice(0, 4);
     }
     var obj = _.find(this.employeeData, function(n) {
-      return n.id == form.id;
+      return n.id == form.idIni + form.id;
     });
     if (obj) {
       form.id = "";
