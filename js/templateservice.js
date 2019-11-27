@@ -13,6 +13,12 @@ templateservicemod.service("TemplateService", function() {
     { firstname: "Pratik", lastname: "Shah", id: "c3", salary: 2000000 }
   ];
 
+  this.employeeIdValidation = function(form) {
+    if (form.id && form.id.length > 5) {
+      form.id = form.id.slice(0, 5);
+    }
+  };
+
   var d = new Date();
   this.year = d.getFullYear();
 
