@@ -3,19 +3,31 @@ templateservicemod.service("TemplateService", function() {
   this.title = "";
   this.meta = "";
   this.metadesc = "";
+  this.departments = [
+    "Marketing",
+    "Chief Officers",
+    "Senior Developer",
+    "Developers"
+  ];
 
   this.employeeData = [
-    { firstname: "Chintan", lastname: "Shah", id: "m1", salary: 1000000 },
-    { firstname: "Chirag", lastname: "Shah", id: "m2", salary: 1000000 },
-    { firstname: "Naman", lastname: "Gadhani", id: "m3", salary: 1000000 },
-    { firstname: "Jagruti", lastname: "Shah", id: "c1", salary: 1000000 },
-    { firstname: "Abhishek", lastname: "Shah", id: "c2", salary: 1000000 },
-    { firstname: "Pratik", lastname: "Shah", id: "c3", salary: 2000000 }
+    { firstname: "Chintan", lastname: "Shah", id: "M0001", salary: 1000000 },
+    { firstname: "Chirag", lastname: "Shah", id: "M0002", salary: 1000000 },
+    { firstname: "Naman", lastname: "Gadhani", id: "M0003", salary: 1000000 },
+    { firstname: "Jagruti", lastname: "Shah", id: "C0001", salary: 1000000 },
+    { firstname: "Abhishek", lastname: "Shah", id: "C0002", salary: 1000000 },
+    { firstname: "Pratik", lastname: "Shah", id: "C0003", salary: 2000000 }
   ];
 
   this.employeeIdValidation = function(form) {
     if (form.id && form.id.length > 5) {
       form.id = form.id.slice(0, 5);
+    }
+    var obj = _.find(this.employeeData, function(n) {
+      return n.id == form.id;
+    });
+    if (obj) {
+      form.id = "";
     }
   };
 
