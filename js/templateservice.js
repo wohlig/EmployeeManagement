@@ -4,10 +4,10 @@ templateservicemod.service("TemplateService", function() {
   this.meta = "";
   this.metadesc = "";
   this.departments = [
-    "Marketing",
     "Chief Officers",
-    "Senior Developer",
-    "Developers"
+    "Developers",
+    "Marketing",
+    "Senior Developer"
   ];
 
   this.employeeData = [
