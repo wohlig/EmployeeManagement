@@ -82,6 +82,6 @@ angular
       fromState,
       fromParams
     ) {
-      $(window).scrollTop(0);
+
     });
   });
