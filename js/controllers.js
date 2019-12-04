@@ -16,13 +16,18 @@ angular
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.searchData = {};
-    $scope.totalSalary = _.sumBy($scope.template.employeeData, function (n) {
-      return n.salary;
-    });
+
+    function calcTotal() {
+      $scope.totalSalary = _.sumBy($scope.template.employeeData, function (n) {
+        return n.salary;
+      });
+    }
+    calcTotal();
     $scope.deleteEmployee = function (employeeId) {
       _.remove($scope.template.employeeData, function (n) {
         return employeeId == n.id;
       });
+      calcTotal();
     };
     $scope.editEmployee = function (employeeId) {
       $state.go("edit", {
